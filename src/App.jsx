@@ -58,7 +58,10 @@ const AppContent = () => {
 
       {/* Admin Login Modal */}
       {showLogin && (
-        <AdminLogin onLoginSuccess={handleLoginSuccess} />
+        <AdminLogin
+          onLoginSuccess={handleLoginSuccess}
+          onClose={() => setShowLogin(false)}
+        />
       )}
 
       {/* Admin Dashboard Modal */}

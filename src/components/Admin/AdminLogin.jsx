@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useData } from '../../context/DataContext';
-import { FaLock, FaUser, FaEye, FaEyeSlash } from 'react-icons/fa';
+import { FaLock, FaUser, FaEye, FaEyeSlash, FaArrowLeft } from 'react-icons/fa';
 import './Admin.css';
 
-const AdminLogin = ({ onLoginSuccess }) => {
+const AdminLogin = ({ onLoginSuccess, onClose }) => {
   const { login } = useData();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -30,6 +30,11 @@ const AdminLogin = ({ onLoginSuccess }) => {
   return (
     <div className="admin-login-overlay">
       <div className="admin-login-card">
+        <button className="back-to-site-btn" onClick={onClose}>
+          <FaArrowLeft />
+          <span>Back to Website</span>
+        </button>
+
         <div className="login-header">
           <div className="login-icon">
             <FaLock />
