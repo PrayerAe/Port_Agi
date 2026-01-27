@@ -1,0 +1,186 @@
+/* ============================================
+   STUNNING DESIGNER PORTFOLIO - BRIGHT PINK THEME
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* ===== PINK PALETTE ===== */
+  --pink-50: #fdf2f8;
+  --pink-100: #fce7f3;
+  --pink-200: #fbcfe8;
+  --pink-300: #f9a8d4;
+  --pink-400: #f472b6;
+  --pink-500: #ec4899;
+  --pink-600: #db2777;
+  --pink-700: #be185d;
+  --pink-800: #9d174d;
+  --pink-900: #831843;
+
+  /* ===== ACCENT COLORS ===== */
+  --hot-pink: #ff1493;
+  --neon-pink: #ff10f0;
+  --coral: #ff6b6b;
+  --peach: #ffb4a2;
+  --rose-gold: #b76e79;
+  --blush: #de5d83;
+
+  /* ===== BRIGHT BACKGROUNDS ===== */
+  --bg-primary: #ffffff;
+  --bg-secondary: #fdf2f8;
+  --bg-tertiary: #fce7f3;
+  --bg-card: #ffffff;
+  --bg-soft: #fff5f8;
+
+  /* ===== GRADIENTS ===== */
+  --gradient-main: linear-gradient(135deg, #ff1493 0%, #ff6b9d 25%, #ec4899 50%, #db2777 75%, #be185d 100%);
+  --gradient-glow: linear-gradient(135deg, #ff1493, #ff10f0, #ec4899);
+  --gradient-soft: linear-gradient(135deg, rgba(255,20,147,0.15), rgba(236,72,153,0.08));
+  --gradient-card: linear-gradient(145deg, rgba(255,20,147,0.08) 0%, rgba(236,72,153,0.04) 100%);
+  --gradient-text: linear-gradient(90deg, #ff1493, #db2777, #be185d, #ff1493);
+  --gradient-border: linear-gradient(90deg, #ff1493, #ec4899, #f472b6, #ff1493);
+  --gradient-hero: linear-gradient(180deg, #fff5f8 0%, #fdf2f8 50%, #fce7f3 100%);
+  --gradient-section: linear-gradient(180deg, #ffffff 0%, #fdf2f8 100%);
+
+  /* ===== GLOW EFFECTS ===== */
+  --glow-sm: 0 0 20px rgba(255,20,147,0.25);
+  --glow-md: 0 0 40px rgba(255,20,147,0.3), 0 0 80px rgba(255,20,147,0.15);
+  --glow-lg: 0 0 60px rgba(255,20,147,0.35), 0 0 120px rgba(255,20,147,0.2);
+  --glow-text: 0 0 30px rgba(255,20,147,0.6);
+
+  /* ===== TEXT ===== */
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  --text-accent: #db2777;
+  --text-light: #9ca3af;
+
+  /* ===== SHADOWS ===== */
+  --shadow-sm: 0 2px 10px rgba(219,39,119,0.08);
+  --shadow-md: 0 8px 30px rgba(219,39,119,0.12);
+  --shadow-lg: 0 20px 60px rgba(219,39,119,0.15);
+  --shadow-card: 0 10px 40px rgba(219,39,119,0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== ANIMATED BACKGROUND ===== */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse 100% 100% at 0% 0%, rgba(255,20,147,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 80% at 100% 100%, rgba(236,72,153,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 60% at 50% 50%, rgba(255,107,157,0.04) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+  animation: bgPulse 10s ease-in-out infinite;
+}
+
+@keyframes bgPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* ===== FLOATING PARTICLES ===== */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(3px 3px at 20% 30%, rgba(255,20,147,0.3) 50%, transparent 50%),
+    radial-gradient(2px 2px at 40% 70%, rgba(236,72,153,0.25) 50%, transparent 50%),
+    radial-gradient(3px 3px at 60% 20%, rgba(244,114,182,0.2) 50%, transparent 50%),
+    radial-gradient(2px 2px at 80% 60%, rgba(255,20,147,0.15) 50%, transparent 50%),
+    radial-gradient(4px 4px at 10% 80%, rgba(255,107,157,0.25) 50%, transparent 50%),
+    radial-gradient(2px 2px at 90% 40%, rgba(236,72,153,0.2) 50%, transparent 50%);
+  background-size: 350px 350px;
+  animation: particleFloat 40s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes particleFloat {
+  from { background-position: 0 0; }
+  to { background-position: 350px 350px; }
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+}
+
+/* ===== SELECTION ===== */
+::selection {
+  background: rgba(255,20,147,0.3);
+  color: var(--text-primary);
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--pink-50);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-main);
+  border-radius: 10px;
+}
+
+/* ===== FOCUS STATES ===== */
+*:focus-visible {
+  outline: 2px solid var(--pink-500);
+  outline-offset: 3px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  html { font-size: 15px; }
+}
+
+@media (max-width: 480px) {
+  html { font-size: 14px; }
+}
